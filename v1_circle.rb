@@ -1,14 +1,13 @@
-require_relative 'circle'
-require_relative 'dp1'
+require_relative 'v1_shape'
 
-class V1Circle < Circle
+class V1Circle < V1Shape
   def initialize(x, y, r)
-    super(x, y, r)
+    @x = x
+    @y = y
+    @r = r
   end
 
-  protected
-
-  def drawCircle(x,y,r)
-    DP1.draw_a_circle(x, y, r)
+  def draw
+    drawCircle(@x,@y,@r)
   end
 end

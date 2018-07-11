@@ -1,14 +1,17 @@
-require_relative 'rectangle'
-require_relative 'dp1'
+require_relative 'v1_shape'
 
-class V1Rectangle < Rectangle
+class V1Rectangle < V1Shape
   def initialize(x1, y1, x2, y2)
-    super(x1, y1, x2, y2)
+    @x1 = x1
+    @x2 = x2
+    @y1 = y1
+    @y2 = x2
   end
 
-  protected
-
-  def drawLine(x1, y1, x2, y2)
-    DP1.draw_a_line(x1, y1, x2, y2)
+  def draw
+    drawLine(@x1, @y1, @x2, @y1)
+    drawLine(@x2, @y1, @x2, @y2)
+    drawLine(@x2, @y2, @x1, @y2)
+    drawLine(@x1, @y2, @x1, @y1)
   end
 end
